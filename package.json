@@ -1,0 +1,16 @@
+{
+  "name": "isomorphic-overflow",
+  "version": "0.0.1",
+  "description": "react+react-router+expres+browserify=isomorphic",
+  "author": "@zpnk",
+  "repository": "zpnk/isomorphic-overflow",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express"  : "^4.12.3",
+    "node-jsx" : "^0.13.2",
+    "react"    : "^0.13.2"
+  }
+}
