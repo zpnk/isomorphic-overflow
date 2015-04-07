@@ -9,7 +9,7 @@ var Html = React.createClass({
             <title>Isomorphic Overflow</title>
           </head>
           <body>
-            <p>Todo: Make isomorphic.</p>
+            <div id='app' dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
           </body>
         </html>
       )
