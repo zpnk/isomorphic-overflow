@@ -7,6 +7,8 @@ var express = require('express'),
     Routes  = require('./shared/routes'),
     Html    = React.createFactory(require('./components/Html.jsx'))
 
+server.use('/public', express.static(__dirname + '/public'))
+
 server.use(function(req, res) {
 
   Router.run(Routes, req.path, function(Handler) {

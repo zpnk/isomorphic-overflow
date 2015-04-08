@@ -6,12 +6,20 @@
   "repository": "zpnk/isomorphic-overflow",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "./node_modules/.bin/browserify client.js -do public/build.js"
   },
   "dependencies": {
     "express"      : "^4.12.3",
     "node-jsx"     : "^0.13.2",
     "react"        : "^0.13.2",
     "react-router" : "^0.13.2"
+  },
+  "devDependencies": {
+    "browserify" : "^9.0.8",
+    "reactify"   : "^1.1.0"
+  },
+  "browserify": {
+    "transform": ["reactify"]
   }
 }
