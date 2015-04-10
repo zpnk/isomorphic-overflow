@@ -8,7 +8,7 @@ var Layout = React.createClass({
     return (
       <div>
         <Nav />
-        <RouteHandler />
+        <RouteHandler data={this.props.data} />
       </div>
     )
   }

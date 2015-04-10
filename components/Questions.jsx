@@ -15,7 +15,7 @@ var Questions = React.createClass({
 
   getInitialState: function() {
     return {
-      questions: []
+      questions: this.props.data.questions || []
     }
   },
 

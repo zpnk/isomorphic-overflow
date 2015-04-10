@@ -5,20 +5,28 @@ var express = require('express'),
     React   = require('react'),
     Router  = require('react-router'),
     Routes  = require('./shared/routes'),
-    Html    = React.createFactory(require('./components/Html.jsx'))
+    Html    = React.createFactory(require('./components/Html.jsx')),
+    hydrate = require('./shared/hydrate.js')
 
 server.use('/public', express.static(__dirname + '/public'))
 
 server.use(function(req, res) {
 
-  Router.run(Routes, req.path, function(Handler) {
+  Router.run(Routes, req.path, function(Handler, state) {
+
     var Component = React.createFactory(Handler)
 
-    var html = React.renderToStaticMarkup(Html({
-      markup: React.renderToString(Component())
-    }))
+    var currentRoute = state.routes[1]
+    currentRoute.params = state.params
 
-    res.send('<!doctype html>' + html)
+    hydrate(currentRoute, function(data) {
+      var html = React.renderToStaticMarkup(Html({
+        markup: React.renderToString(Component({data: data}))
+      }))
+
+      res.send('<!doctype html>' + html)
+    })
+
   })
 
 })
