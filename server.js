@@ -21,6 +21,7 @@ server.use(function(req, res) {
 
     hydrate(currentRoute, function(data) {
       var html = React.renderToStaticMarkup(Html({
+        state:  'window.App = ' + JSON.stringify(data),
         markup: React.renderToString(Component({data: data}))
       }))
 
