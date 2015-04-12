@@ -4,6 +4,7 @@ var Router = require('react-router')
 
 var Layout = require('./../components/Layout.jsx'),
     Questions = require('./../components/Questions.jsx'),
+    Question = require('./../components/Question.jsx'),
     About = require('./../components/About.jsx')
 
 // Routes
@@ -19,6 +20,13 @@ Router.createRoute({
   name: 'questions',
   handler: Questions,
   isDefault: true
+})
+
+Router.createRoute({
+  parentRoute: 〳,
+  name: 'question',
+  handler: Question,
+  path: 'question/:id'
 })
 
 Router.createRoute({

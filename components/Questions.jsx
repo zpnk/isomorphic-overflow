@@ -1,4 +1,5 @@
-var React      = require('react'),
+var React = require('react'),
+    Link  = require('react-router').Link,
     superagent = require('superagent')
 
 var API_URL = 'https://api.stackexchange.com/2.2/questions?pagesize=10&sort=hot&tagged=javascript&site=stackoverflow'
@@ -25,12 +26,18 @@ var Questions = React.createClass({
     var self = this
     Questions.fetch({}, function(data) {
       self.setState({questions: data.questions})
+      window.App.questions = data.questions
     })
   },
 
   render: function() {
     var questions = this.state.questions.map(function(q) {
-      return <li key={q.question_id}>{q.title}</li>
+      var id = q.question_id
+      return (
+        <li key={id}>
+          <Link to='question' params={{id: id}}>{q.title}</Link>
+        </li>
+      )
     })
 
     return (
