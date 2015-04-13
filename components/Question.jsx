@@ -50,15 +50,15 @@ var Question = React.createClass({
 
     return (
       <section>
-        <p>{question.title}</p>
-        <p>
-          <span>
+        <p className='lead'>{question.title}</p>
+        <p className='group'>
+          <span className='left'>
             Asked by <a href={question.owner.link}>{question.owner.display_name}</a>
           </span>
-          <span> {question.view_count} views, {question.answer_count} answers</span>
+          <span className='right'>{question.view_count} views, {question.answer_count} answers</span>
         </p>
         <p>{tags}</p>
-        <a href={question.link}>Have an answer?</a>
+        <a href={question.link} className='btn btn-green'>Have an answer?</a>
       </section>
     )
   }

@@ -7,6 +7,7 @@ var Html = React.createClass({
         <html>
           <head>
             <title>Isomorphic Overflow</title>
+            <link rel='stylesheet' href='/public/vendor/kube.min.css' />
           </head>
           <body>
             <div id='app' dangerouslySetInnerHTML={{__html: this.props.markup}}></div>

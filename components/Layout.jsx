@@ -6,10 +6,10 @@ var Layout = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <main className='unit-centered unit-30'>
         <Nav />
         <RouteHandler data={this.props.data} />
-      </div>
+      </main>
     )
   }
 

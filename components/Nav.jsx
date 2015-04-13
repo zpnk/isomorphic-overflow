@@ -5,10 +5,9 @@ var Nav = React.createClass({
 
   render: function() {
     return (
-      <nav>
-        <Link to='questions'>Top 10</Link>
-        <span> | </span>
-        <Link to='about'>About</Link>
+      <nav className='units-row'>
+        <Link to='questions' className='btn btn-blue btn-outline' activeClassName='btn-active'>Top 10</Link>
+        <Link to='about' className='btn btn-blue btn-outline' activeClassName='btn-active'>About</Link>
       </nav>
     )
   }

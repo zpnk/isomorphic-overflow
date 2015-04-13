@@ -34,19 +34,19 @@ var Questions = React.createClass({
     var questions = this.state.questions.map(function(q) {
       var id = q.question_id
       return (
-        <li key={id}>
+        <li key={id} style={{marginBottom: '15px'}}>
           <Link to='question' params={{id: id}}>{q.title}</Link>
         </li>
       )
     })
 
     return (
-      <div>
-        <p>The 10 hottest javascript questions on Stack Overflow:</p>
+      <section>
+        <p className='lead'>The 10 hottest javascript questions on Stack Overflow:</p>
         <ul>
           {questions}
         </ul>
-      </div>
+      </section>
     )
   }
 
