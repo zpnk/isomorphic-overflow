@@ -8,7 +8,7 @@ var express = require('express'),
     Html    = React.createFactory(require('./components/Html.jsx')),
     hydrate = require('./shared/hydrate.js')
 
-server.use('/public', express.static(__dirname + '/public'))
+server.use(express.static(__dirname + '/public'))
 
 server.use(function(req, res) {
 
